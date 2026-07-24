@@ -18,7 +18,7 @@ const plans = [
       "Unlimited design requests",
     ],
     cta: "Book Now",
-    ctaHref: "https://cal.com/apextechsquare/15min?user=apextechsquare",
+    ctaHref: "https://cal.com/apextech-square/15min",
     popular: false,
   },
   {
@@ -38,7 +38,7 @@ const plans = [
       "Unlimited design requests",
     ],
     cta: "Book Now",
-    ctaHref: "https://cal.com/apextechsquare/15min?user=apextechsquare",
+    ctaHref: "https://cal.com/apextech-square/15min",
     popular: true,
   },
   {
@@ -142,7 +142,7 @@ const ApexPricing = () => {
 
         <p className="text-center text-sm text-muted-foreground mt-10 reveal">
           Per month / cancel any time.{" "}
-          <a href="https://cal.com/apextechsquare/15min?user=apextechsquare" target="_blank" rel="noopener noreferrer"
+          <a href="https://cal.com/apextech-square/15min" target="_blank" rel="noopener noreferrer"
             className="text-primary hover:text-accent transition-colors">
             Not sure which plan? Book a free discovery call →
           </a>

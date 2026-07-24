@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { MessageSquare, Search, Figma, Code2, Rocket } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -29,19 +30,48 @@ const steps = [
   {
     number: "05",
     icon: Rocket,
-    title: "Final Review & Launch Support",
+    title: "Final Review & Launch",
     description: "We review everything together, make final tweaks, and ensure your launch is smooth. Our team stays available for post-launch support and iteration.",
   },
 ];
 
 const ApexProcess = () => {
   const ref = useScrollReveal();
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Per-step staggered IntersectionObserver
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    stepRefs.current.forEach((el, i) => {
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              el.classList.add("process-visible");
+            }, i * 160);
+            obs.disconnect();
+          }
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+    return () => observers.forEach((obs) => obs.disconnect());
+  }, []);
 
   return (
-    <section id="process" className="py-28 relative overflow-hidden" ref={ref as React.RefObject<HTMLElement>}>
+    <section
+      id="process"
+      className="py-28 relative overflow-hidden"
+      ref={ref as React.RefObject<HTMLElement>}
+    >
       <div className="absolute inset-0 dot-pattern opacity-25" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, hsl(221 83% 53% / 0.06) 0%, transparent 70%)" }} />
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, hsl(221 83% 53% / 0.08) 0%, transparent 70%)" }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 reveal">
@@ -56,48 +86,99 @@ const ApexProcess = () => {
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="relative">
-          {/* Connecting line */}
-          <div className="absolute left-8 top-8 bottom-8 w-px bg-gradient-to-b from-primary/40 via-accent/30 to-transparent hidden lg:block" style={{ left: "calc(50% - 0.5px)" }} />
+        {/* Zigzag timeline */}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Vertical centre line */}
+          <div
+            className="absolute hidden lg:block w-0.5 top-6 bottom-6"
+            style={{
+              left: "50%",
+              transform: "translateX(-50%)",
+              background: "linear-gradient(to bottom, hsl(221 83% 53% / 0.6), hsl(189 94% 43% / 0.4), transparent)",
+            }}
+          />
 
-          <div className="space-y-6 lg:space-y-0 lg:grid lg:grid-cols-1 lg:gap-0">
-            {steps.map((step, i) => {
-              const Icon = step.icon;
-              const isEven = i % 2 === 0;
-              return (
-                <div
-                  key={step.number}
-                  className={`reveal delay-${[100, 200, 300, 200, 100][i]} flex flex-col lg:flex-row items-start lg:items-center gap-6 ${
-                    isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                  } mb-8`}
-                >
-                  {/* Card */}
-                  <div className={`flex-1 ${isEven ? "lg:text-right lg:pr-12" : "lg:text-left lg:pl-12"}`}>
-                    <div className={`glass-card rounded-2xl p-7 card-hover border border-border/50 group inline-block w-full lg:max-w-md ${isEven ? "lg:ml-auto" : ""}`}>
-                      <div className={`flex items-center gap-3 mb-3 ${isEven ? "lg:flex-row-reverse" : ""}`}>
-                        <div className="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                          <Icon className="w-5 h-5 text-white" />
+          {steps.map((step, i) => {
+            const Icon = step.icon;
+            const isLeft = i % 2 === 0;
+
+            return (
+              <div
+                key={step.number}
+                ref={(el) => { stepRefs.current[i] = el; }}
+                className="process-step mb-6 lg:mb-0"
+              >
+                {/* Mobile */}
+                <div className="flex items-start gap-4 lg:hidden rounded-2xl p-6 border border-border/60 card-hover mb-6 bg-card shadow-md shadow-black/10">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white font-black text-sm shadow-lg shadow-primary/30">
+                    {step.number}
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <Icon className="w-4 h-4 text-accent" aria-hidden="true" />
+                      <h3 className="font-bold text-base">{step.title}</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+                  </div>
+                </div>
+
+                {/* Desktop zigzag: 3-col grid */}
+                <div className="hidden lg:grid lg:grid-cols-[1fr_64px_1fr] lg:items-center lg:mb-10">
+                  {/* Left slot */}
+                  <div className={isLeft ? "pr-8" : ""}>
+                    {isLeft && (
+                      <div className="rounded-2xl p-6 border border-border/60 card-hover group ml-auto max-w-sm bg-card shadow-lg shadow-black/10 [data-theme=light]:shadow-primary/5">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-md shadow-primary/20">
+                            <Icon className="w-4 h-4 text-white" aria-hidden="true" />
+                          </div>
+                          <h3 className="font-bold">{step.title}</h3>
                         </div>
-                        <h3 className="font-bold text-base">{step.title}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                       </div>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+                    )}
+                  </div>
+
+                  {/* Centre number dot */}
+                  <div className="flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white font-black text-sm z-10 shadow-lg shadow-primary/40 ring-4 ring-background">
+                      {step.number}
                     </div>
                   </div>
 
-                  {/* Center dot */}
-                  <div className="hidden lg:flex flex-shrink-0 w-12 h-12 rounded-full gradient-bg items-center justify-center text-white font-black text-sm z-10 shadow-lg shadow-primary/30">
-                    {step.number}
+                  {/* Right slot */}
+                  <div className={!isLeft ? "pl-8" : ""}>
+                    {!isLeft && (
+                      <div className="rounded-2xl p-6 border border-border/60 card-hover group mr-auto max-w-sm bg-card shadow-lg shadow-black/10">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-md shadow-primary/20">
+                            <Icon className="w-4 h-4 text-white" aria-hidden="true" />
+                          </div>
+                          <h3 className="font-bold">{step.title}</h3>
+                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+                      </div>
+                    )}
                   </div>
-
-                  {/* Spacer */}
-                  <div className="flex-1 hidden lg:block" />
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
+
+      {/* Per-step animation styles */}
+      <style>{`
+        .process-step {
+          opacity: 0;
+          transform: translateY(32px);
+          transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .process-step.process-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}</style>
     </section>
   );
 };

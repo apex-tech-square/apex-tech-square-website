@@ -1,15 +1,14 @@
 import { ArrowRight, Phone } from "lucide-react";
 
 const clientLogos = [
-  "azugo", "yeppy", "PetsVetConnect", "Security Services Support Authority",
-  "Tamreeni", "OneView", "azugo", "yeppy", "PetsVetConnect",
-  "Security Services", "Tamreeni", "OneView",
-];
-
-const stats = [
-  { value: "95%", label: "Customer Satisfaction" },
-  { value: "07+", label: "Years of Experience" },
-  { value: "30+", label: "Projects Completed" },
+  { src: "/assets/logo-1.svg", alt: "Client 1" },
+  { src: "/assets/logo-2.svg", alt: "Client 2" },
+  { src: "/assets/logo-3.svg", alt: "Client 3" },
+  { src: "/assets/logo-4.svg", alt: "Client 4" },
+  { src: "/assets/logo-5.svg", alt: "Client 5" },
+  { src: "/assets/logo-6.svg", alt: "Client 6" },
+  { src: "/assets/logo-7.svg", alt: "Client 7" },
+  { src: "/assets/logo-8.svg", alt: "Client 8" },
 ];
 
 const ApexHero = () => {
@@ -34,12 +33,13 @@ const ApexHero = () => {
             </span>
           </div>
 
-          {/* Headline */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-6 animate-slide-up">
-            Elevating Your Brand
-            <br />
-            with{" "}
-            <span className="gradient-text">Innovative Design</span>
+          {/* Headline — forced 2 lines */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6 animate-slide-up">
+            <span className="block">Elevating Your Brand</span>
+            <span className="block">
+              with{" "}
+              <span className="gradient-text">Innovative Design</span>
+            </span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10 animate-slide-up stagger-1">
@@ -47,54 +47,46 @@ const ApexHero = () => {
             that not only captivate but also elevate.
           </p>
 
-          {/* CTAs */}
+          {/* CTAs — WCAG AA compliant */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up stagger-2">
             <a
               href="#portfolio"
-              className="btn-gradient text-white font-semibold px-8 py-4 rounded-full text-base flex items-center gap-2 group"
+              className="btn-gradient text-white font-semibold px-8 py-4 rounded-full text-base flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               Our Work
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </a>
             <a
-              href="https://cal.com/apextechsquare/15min?user=apextechsquare"
+              href="https://cal.com/apextech-square/15min"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline-glow font-semibold px-8 py-4 rounded-full text-base flex items-center gap-2"
+              className="btn-outline-glow px-8 py-4 rounded-full text-base flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-4 h-4" aria-hidden="true" />
               Schedule a Call
             </a>
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-5 mt-20 max-w-2xl mx-auto animate-fade-in stagger-3">
-          {stats.map((s) => (
-            <div key={s.label} className="glass-card rounded-2xl p-5 text-center card-hover border border-border/50">
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">{s.value}</div>
-              <div className="text-xs text-muted-foreground">{s.label}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Logo marquee */}
-        <div className="mt-16 animate-fade-in stagger-4">
-          <p className="text-center text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-6 opacity-50">
+        {/* Logo marquee — no boxes, just logos */}
+        <div className="mt-20 animate-fade-in stagger-3">
+          <p className="text-center text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-8">
             Featured highlights of our work
           </p>
           <div className="relative overflow-hidden">
             <div className="absolute left-0 top-0 bottom-0 w-24 z-10"
-              style={{ background: "linear-gradient(to right, hsl(228 54% 7%), transparent)" }} />
+              style={{ background: "linear-gradient(to right, hsl(var(--background)), transparent)" }} />
             <div className="absolute right-0 top-0 bottom-0 w-24 z-10"
-              style={{ background: "linear-gradient(to left, hsl(228 54% 7%), transparent)" }} />
-            <div className="flex animate-marquee whitespace-nowrap">
+              style={{ background: "linear-gradient(to left, hsl(var(--background)), transparent)" }} />
+            <div className="flex animate-marquee whitespace-nowrap items-center">
               {[...clientLogos, ...clientLogos].map((logo, i) => (
-                <div
-                  key={i}
-                  className="flex-shrink-0 mx-5 px-6 py-3 rounded-xl bg-secondary/40 border border-border/40 hover:border-primary/30 transition-colors"
-                >
-                  <span className="text-sm font-semibold text-muted-foreground">{logo}</span>
+                <div key={i} className="flex-shrink-0 mx-12 flex items-center justify-center">
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="h-16 md:h-20 w-auto max-w-[200px] object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+                    style={{ filter: "var(--logo-filter, brightness(0) invert(1))" }}
+                  />
                 </div>
               ))}
             </div>

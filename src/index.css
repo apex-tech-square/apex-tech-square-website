@@ -1,9 +1,43 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* ApexTech Square — Dark Navy + Electric Blue + Cyan */
 /* _APEX_DESIGN_SYSTEM_ — DO NOT REVERT */
+
+/* ── Light Theme ── */
+[data-theme="light"] {
+  --background: 210 40% 97%;
+  --foreground: 228 39% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 228 39% 10%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 228 39% 10%;
+  --primary: 221 83% 48%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 40% 90%;
+  --secondary-foreground: 228 39% 10%;
+  --muted: 210 40% 90%;
+  --muted-foreground: 215 16% 40%;
+  --accent: 189 80% 32%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 214 32% 82%;
+  --input: 214 32% 82%;
+  --ring: 221 83% 48%;
+  --sidebar-background: 0 0% 100%;
+  --sidebar-foreground: 228 39% 10%;
+  --sidebar-primary: 221 83% 48%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 210 40% 90%;
+  --sidebar-accent-foreground: 228 39% 10%;
+  --sidebar-border: 214 32% 82%;
+  --sidebar-ring: 221 83% 48%;
+}
+
 @layer base {
   :root {
     --background: 228 54% 7%;
@@ -82,13 +116,18 @@
     box-shadow: 0 0 30px hsl(221 83% 53% / 0.5);
     transform: translateY(-1px);
   }
+  /* WCAG AA: white text on dark bg, dark text on light bg */
   .btn-outline-glow {
-    @apply border border-primary/50 text-primary bg-transparent;
+    @apply border border-primary/60 bg-transparent font-semibold;
+    color: #ffffff;
     transition: all 0.3s;
   }
+  [data-theme="light"] .btn-outline-glow {
+    color: hsl(221 83% 35%);
+  }
   .btn-outline-glow:hover {
-    @apply bg-primary/10 border-primary;
-    box-shadow: 0 0 20px hsl(221 83% 53% / 0.3);
+    @apply bg-primary/15 border-primary;
+    box-shadow: 0 0 20px hsl(221 83% 53% / 0.35);
   }
   .reveal {
     opacity: 0; transform: translateY(28px);
@@ -135,10 +174,36 @@
   .stagger-2 { animation-delay: 0.2s; }
   .stagger-3 { animation-delay: 0.3s; }
   .stagger-4 { animation-delay: 0.4s; }
+  /* Logo filter: white in dark mode, dark in light mode */
+  :root { --logo-filter: brightness(0) invert(1); }
+  [data-theme="light"] { --logo-filter: brightness(0) invert(0) opacity(0.65); }
+  /* Brand/nav logo filter: crisp white in dark mode, pure black in light mode */
+  :root { --brand-logo-filter: brightness(0) invert(1); }
+  [data-theme="light"] { --brand-logo-filter: brightness(0); }
+
+  .font-clash { font-family: 'Clash Display', sans-serif; }
+
   .section-label {
     @apply inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full border;
     color: hsl(189 94% 53%);
     border-color: hsl(189 94% 43% / 0.35);
     background: hsl(189 94% 43% / 0.08);
   }
+  /* Light mode: darken section labels for WCAG AA contrast */
+  [data-theme="light"] .section-label {
+    color: hsl(189 80% 26%);
+    border-color: hsl(189 80% 26% / 0.4);
+    background: hsl(189 80% 26% / 0.09);
+  }
+  /* Light mode: service/portfolio chips with better contrast */
+  [data-theme="light"] .chip-tag {
+    color: hsl(221 60% 28%);
+    border-color: hsl(221 60% 28% / 0.3);
+    background: hsl(221 60% 28% / 0.08);
+  }
+  @keyframes reveal-scale {
+    from { opacity: 0; transform: scale(0.92) translateY(20px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  .animate-reveal-scale { animation: reveal-scale 0.6s ease-out both; }
 }

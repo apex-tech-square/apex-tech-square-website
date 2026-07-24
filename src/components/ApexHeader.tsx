@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "@/hooks/useTheme";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -12,6 +13,7 @@ const navLinks = [
 const ApexHeader = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -29,13 +31,16 @@ const ApexHeader = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <a href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center font-bold text-white text-sm">
-              AT
-            </div>
-            <span className="font-bold text-lg tracking-tight">
-              Apex<span className="gradient-text">Tech</span> Square
+          {/* Logo — icon + text in Clash Display */}
+          <a href="/" className="flex items-center gap-2.5 group">
+            <img
+              src="/apex-tech-logo.svg"
+              alt=""
+              aria-hidden="true"
+              className="h-8 w-8 flex-shrink-0"
+            />
+            <span className="font-clash font-bold text-xl md:text-2xl tracking-tight leading-none">
+              ApexTech <span className="gradient-text">Square</span>
             </span>
           </a>
 
@@ -53,26 +58,39 @@ const ApexHeader = () => {
             ))}
           </nav>
 
-          {/* CTA */}
-          <div className="hidden md:flex items-center gap-3">
+          {/* Right: Theme Toggle + CTA */}
+          <div className="flex items-center gap-2 md:gap-3">
+            <button
+              onClick={toggleTheme}
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              className="w-9 h-9 rounded-full border border-border/60 bg-secondary/60 hover:bg-secondary hover:border-primary/40 flex items-center justify-center transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              {theme === "dark" ? (
+                <Sun className="w-4 h-4 text-muted-foreground" aria-hidden="true" />
+              ) : (
+                <Moon className="w-4 h-4 text-muted-foreground" aria-hidden="true" />
+              )}
+            </button>
+
             <a
-              href="https://cal.com/apextechsquare/30min"
+              href="https://cal.com/apextech-square/15min"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-gradient px-5 py-2.5 rounded-full text-sm font-semibold text-white"
+              className="hidden md:inline-flex btn-gradient px-5 py-2.5 rounded-full text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               Get a Free Consultation
             </a>
-          </div>
 
-          {/* Mobile toggle */}
-          <button
-            className="md:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+            {/* Mobile toggle */}
+            <button
+              className="md:hidden p-2 text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
+            >
+              {menuOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -94,7 +112,7 @@ const ApexHeader = () => {
             </a>
           ))}
           <a
-            href="https://cal.com/apextechsquare/30min"
+            href="https://cal.com/apextech-square/15min"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 btn-gradient px-5 py-3 rounded-full text-sm font-semibold text-white text-center"
