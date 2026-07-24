@@ -97,7 +97,7 @@ const ApexServices = () => {
         </div>
 
         <div
-          className="grid lg:grid-cols-2 gap-10 items-stretch"
+          className="grid lg:grid-cols-2 gap-10 items-start"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >

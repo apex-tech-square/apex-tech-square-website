@@ -72,7 +72,7 @@ const ApexFooter = () => {
                 alt="ApexTech Square logo"
                 className="h-10 w-10 object-contain flex-shrink-0"
               />
-              <span className="font-clash font-bold text-lg leading-tight">
+              <span className="font-clash font-semibold text-lg leading-tight">
                 ApexTech <span className="gradient-text">Square</span>
               </span>
             </a>
@@ -147,7 +147,7 @@ const ApexFooter = () => {
             <h4 className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-5">
               Accepted Payments
             </h4>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-7">
               <a
                 href="https://www.payoneer.com"
                 target="_blank"
