@@ -6,7 +6,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 // ── Replace with your reCAPTCHA v2 site key ──
 // Register at: https://www.google.com/recaptcha/admin → create v2 "I'm not a robot"
 // Add your Vercel deployment domain when registering
-const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"; // test key (localhost only)
+const RECAPTCHA_SITE_KEY = "6LfRMGMtAAAAACY5bBhxrsB74ad-HKqu_XbwlC9U"; // test key (localhost only)
 
 // ── Replace YOUR_FORM_ID with your Formspree form ID ──
 // Create a free account at formspree.io → New Form → copy the ID
