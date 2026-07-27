@@ -9,7 +9,7 @@ const services = [
     title: "Product Design",
     description: "We design intuitive digital products your users will love — from MVPs to full-scale SaaS platforms. Every screen is crafted with usability, clarity, and business goals in mind.",
     tags: ["UI/UX", "SaaS", "MVP"],
-    image: "/assets/product-design.png",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const services = [
     title: "Brand Identity",
     description: "Your brand deserves more than just a logo. We build bold, memorable identities that reflect your values and resonate with your target audience.",
     tags: ["Logo", "Branding", "Identity"],
-    image: "/assets/brand-identity.png",
+    image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=800&q=80",
   },
   {
     id: 3,
@@ -97,7 +97,7 @@ const ApexServices = () => {
         </div>
 
         <div
-          className="grid lg:grid-cols-2 gap-10 items-start"
+          className="grid lg:grid-cols-2 gap-10 items-stretch"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -168,8 +168,8 @@ const ApexServices = () => {
           </div>
 
           {/* Image panel */}
-          <div className="reveal-right delay-200">
-            <div className="relative rounded-3xl overflow-hidden border border-border/50 glow-blue h-[480px]">
+          <div className="reveal-right delay-200 h-full">
+            <div className="relative rounded-3xl overflow-hidden border border-border/50 glow-blue h-full min-h-[380px]">
               <img
                 key={active.id}
                 src={active.image}
