@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const LINKEDIN_URL = "https://www.linkedin.com/company/apextechsquare/";
-const UPWORK_URL   = "https://www.upwork.com/freelancers/~0166c489ac5524df1e";
+const UPWORK_URL   = "https://www.upwork.com/agencies/1554501345948254208/";
 const EMAIL        = "apextechsquare@gmail.com";
 
 const services = [

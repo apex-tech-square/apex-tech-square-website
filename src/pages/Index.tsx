@@ -21,9 +21,9 @@ const Index = () => {
         <ApexHero />
         <ApexServices />
         <ApexPortfolio />
-        <ApexSlider />
         <ApexAbout />
         <ApexBenefits />
+        <ApexSlider />
         <ApexProcess />
         <ApexPricing />
         <ApexTestimonials />

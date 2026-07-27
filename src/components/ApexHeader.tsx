@@ -39,7 +39,7 @@ const ApexHeader = () => {
               aria-hidden="true"
               className="h-8 w-8 flex-shrink-0"
             />
-            <span className="font-clash font-semibold text-xl md:text-2xl tracking-tight leading-none">
+            <span className="font-clash font-semibold text-base md:text-lg tracking-tight leading-none">
               ApexTech <span className="gradient-text">Square</span>
             </span>
           </a>

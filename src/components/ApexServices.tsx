@@ -168,8 +168,8 @@ const ApexServices = () => {
           </div>
 
           {/* Image panel */}
-          <div className="reveal-right delay-200 flex flex-col">
-            <div className="relative rounded-3xl overflow-hidden border border-border/50 glow-blue flex-1 min-h-[480px]">
+          <div className="reveal-right delay-200">
+            <div className="relative rounded-3xl overflow-hidden border border-border/50 glow-blue h-[480px]">
               <img
                 key={active.id}
                 src={active.image}
