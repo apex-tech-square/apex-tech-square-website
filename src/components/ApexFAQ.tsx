@@ -17,11 +17,11 @@ const faqs = [
   },
   {
     q: "Do you offer refunds?",
-    a: "We believe in earning your trust before your money. That's why we don't charge anything upfront. If you're not happy with the outcome, you don't pay — simple as that.",
+    a: "We believe in earning your trust before your money. That's why we don't charge anything upfront. If you're not happy with the outcome, you don't pay, simple as that.",
   },
   {
     q: "How many revisions do you offer?",
-    a: "We offer unlimited revisions — seriously. Your satisfaction is our top priority, and we're committed to refining the design until it feels just right. From major layout changes to the smallest UI tweaks, we iterate closely with you at every step. No extra charges. No revision limits.",
+    a: "We offer unlimited revisions seriously. Your satisfaction is our top priority, and we're committed to refining the design until it feels just right. From major layout changes to the smallest UI tweaks, we iterate closely with you at every step. No extra charges. No revision limits.",
   },
   {
     q: "Are there any types of projects you don't take on?",
