@@ -7,7 +7,7 @@ const testimonials = [
     author: "Tamreeni Team",
     role: "Fitness Platform",
     /*logo: "/testimonial-logo-1.svg",*/
-    avatar: "/testimonial-avatar-1.jpg",
+    avatar: "/assets/testimonial-avatar-1.jpg",
     rating: 5,
   },
   {
@@ -15,7 +15,7 @@ const testimonials = [
     author: "OneView Client",
     role: "SaaS Platform",
    /* logo: "/testimonial-logo-2.svg",*/
-    avatar: "/testimonial-avatar-2.jpg",
+    avatar: "/assets/testimonial-avatar-2.jpg",
     rating: 5,
   },
   {
@@ -23,7 +23,7 @@ const testimonials = [
     author: "Security Services Authority",
     role: "Government Platform",
    /* logo: "/testimonial-logo-3.svg",*/
-    avatar: "/testimonial-avatar-3.jpg",
+    avatar: "/assets/testimonial-avatar-3.jpg",
     rating: 5,
   },
   {
@@ -31,39 +31,39 @@ const testimonials = [
     author: "PetsVetConnect Team",
     role: "Mobile App",
    /* logo: "/testimonial-logo-4.svg",*/
-    avatar: "/testimonial-avatar-4.jpg",
+    avatar: "/assets/testimonial-avatar-4.jpg",
     rating: 5,
   },
   {
     quote: "EvenStan's brand and website came together perfectly. The no-code development meant we launched faster than we thought possible. Incredible value.",
-    author: "EvenStan Founder",
-    role: "Events Platform",
+    author: "",
+    role: "CEO, EvenStan",
    /* logo: "/testimonial-logo-5.svg",*/
-    avatar: "/testimonial-avatar-5.jpg",
+    avatar: "/assets/testimonial-avatar-5.jpg",
     rating: 5,
   },
   {
     quote: "Unlimited revisions, fast communication, and designs that truly reflect our brand. ApexTech Square is a rare find in the agency world.",
-    author: "Azugo Client",
-    role: "Product Company",
+    author: "Aspire Client",
+    role: "Product Manager",
     /* logo: "/testimonial-logo-6.svg",*/
-    avatar: "/testimonial-avatar-6.jpg",
+    avatar: "/assets/testimonial-avatar-6.jpg",
     rating: 5,
   },
   {
-    quote: "They nailed our vision on the first try. The design felt like us immediately — no back and forth trying to explain our brand over and over.",
+    quote: "They nailed our vision on the first try. The design felt like us immediately, no back and forth trying to explain our brand over and over.",
     author: "Sarah Mitchell",
-    role: "Founder, Craftly",
+    role: "Founder, Mdrouz",
     /*logo: "/testimonial-logo-7.svg",*/
-    avatar: "/testimonial-avatar-7.jpg",
+    avatar: "/assets/testimonial-avatar-7.jpg",
     rating: 5,
   },
   {
     quote: "Honestly one of the most painless design experiences I've had. They just get it. Responsive, sharp, and the final product looked better than what I imagined.",
     author: "James Okafor",
-    role: "CEO, NomadPay",
+    role: "CEO, EvenStan",
     /*logo: "/testimonial-logo-8.svg",*/
-    avatar: "/testimonial-avatar-8.jpg",
+    avatar: "/assets/testimonial-avatar-8.jpg",
     rating: 5,
   },
 ];

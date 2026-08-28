@@ -3,7 +3,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 const stats = [
   { value: "95%", label: "Percent", sub: "Customer Satisfaction" },
   { value: "06+", label: "Years of", sub: "Experience" },
-  { value: "10+", label: "Projects", sub: "Completed" },
+  { value: "30+", label: "Projects", sub: "Completed" },
 ];
 
 const ApexAbout = () => {
