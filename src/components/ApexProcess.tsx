@@ -13,7 +13,7 @@ const steps = [
     number: "02",
     icon: Search,
     title: "Structure & Wireframing",
-    description: "We map out the core experience using wireframes and user flows — laying the foundation for intuitive navigation and smart functionality.",
+    description: "We map out the core experience using wireframes and user flows, laying the foundation for intuitive navigation and smart functionality.",
   },
   {
     number: "03",
@@ -25,7 +25,7 @@ const steps = [
     number: "04",
     icon: Code2,
     title: "Handoff & Development",
-    description: "Once approved, we hand off design files to your dev team — or build them ourselves using no-code tools, depending on your project type.",
+    description: "Once approved, we hand off design files to your dev team or build them ourselves using no-code tools, depending on your project type.",
   },
   {
     number: "05",
@@ -81,7 +81,7 @@ const ApexProcess = () => {
             <span className="gradient-text">Together</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            From creative design to technical solutions — we lead you through
+            From creative design to technical solutions, we lead you through
             every step of the journey.
           </p>
         </div>

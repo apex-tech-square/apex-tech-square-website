@@ -7,7 +7,7 @@ const plans = [
     tag: "Perfect for existing products that need a fresh boost.",
     price: "$500",
     period: "mo",
-    description: "Already have a product but feel it could perform better? We'll dig deep into what's not working, improve usability, and make your product more intuitive and visually appealing — all while keeping your goals in mind.",
+    description: "Already have a product but feel it could perform better? We'll dig deep into what's not working, improve usability, and make your product more intuitive and visually appealing, all while keeping your goals in mind.",
     features: [
       "UX audit & pain-point analysis",
       "UI and UX enhancements",
@@ -78,7 +78,7 @@ const ApexPricing = () => {
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
             Enjoy the full experience with no hidden fees or surprises!
-            Per month — cancel any time.
+            Per month, cancel any time.
           </p>
         </div>
 

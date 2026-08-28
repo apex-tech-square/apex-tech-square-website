@@ -7,9 +7,9 @@ const services = [
     id: 1,
     icon: Palette,
     title: "Product Design",
-    description: "We design intuitive digital products your users will love — from MVPs to full-scale SaaS platforms. Every screen is crafted with usability, clarity, and business goals in mind.",
+    description: "We design intuitive digital products your users will love from MVPs to full-scale SaaS platforms. Every screen is crafted with usability, clarity, and business goals in mind.",
     tags: ["UI/UX", "SaaS", "MVP"],
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80",
+    image: "/Images and SVGs/Product Design Image.png",
   },
   {
     id: 2,
@@ -17,15 +17,15 @@ const services = [
     title: "Brand Identity",
     description: "Your brand deserves more than just a logo. We build bold, memorable identities that reflect your values and resonate with your target audience.",
     tags: ["Logo", "Branding", "Identity"],
-    image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=800&q=80",
+    image: "/Images and SVGs/Brand Identity Image.png",
   },
   {
     id: 3,
     icon: Smartphone,
     title: "Web & Mobile Apps",
-    description: "We design sleek, high-performing interfaces for websites, SaaS dashboards, and mobile apps — ensuring your product looks great on every screen.",
+    description: "We design sleek, high-performing interfaces for websites, SaaS dashboards, and mobile apps ensuring your product looks great on every screen.",
     tags: ["Web", "Mobile", "SaaS"],
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&q=80",
+    image: "/Images and SVGs/Web and Mobile Image.png",
   },
   {
     id: 4,
@@ -33,15 +33,15 @@ const services = [
     title: "Design Systems",
     description: "Build once, scale forever. We create organized, reusable design systems that power consistent UI across your entire SaaS or product ecosystem.",
     tags: ["Figma", "Components", "Tokens"],
-    image: "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=700&q=80",
+    image: "/Images and SVGs/Design System Service.png",
   },
   {
     id: 5,
     icon: Code2,
     title: "No-Code Development",
-    description: "Need to launch fast? We build responsive, scalable web and SaaS apps using leading no-code tools — all without sacrificing design quality.",
+    description: "Need to launch fast? We build responsive, scalable web and SaaS apps using leading no-code tools, all without sacrificing design quality.",
     tags: ["Webflow", "Framer", "No-Code"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80",
+    image: "/Images and SVGs/No Code Development.png",
   },
 ];
 
@@ -91,7 +91,7 @@ const ApexServices = () => {
             <span className="gradient-text">Define Our Excellence</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            From brand identity to fully shipped digital products — we cover the
+            From brand identity to fully shipped digital products, we cover the
             full spectrum of design and no-code development.
           </p>
         </div>

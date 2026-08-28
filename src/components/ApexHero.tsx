@@ -44,7 +44,7 @@ const ApexHero = () => {
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10 animate-slide-up stagger-1">
             We help early-stage founders turn ideas into products people
-            actually want to use — clean, intentional design that works.
+            actually want to use with clean, intentional design that works.
           </p>
 
           {/* CTAs — WCAG AA compliant */}

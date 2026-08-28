@@ -56,7 +56,8 @@ const ApexBenefits = () => {
         <div className="text-center mb-16 reveal">
           <span className="section-label">Benefits</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-5 mb-4">
-            Here are a few things we do that{" "}
+          Here are a few things we do that
+          <br />
             <span className="gradient-text">others really just don't.</span>
           </h2>
         </div>
