@@ -9,7 +9,7 @@ const services = [
     title: "Product Design",
     description: "We design intuitive digital products your users will love from MVPs to full-scale SaaS platforms. Every screen is crafted with usability, clarity, and business goals in mind.",
     tags: ["UI/UX", "SaaS", "MVP"],
-    image: "/Images and SVGs/Product Design Image.png",
+    image: "/assets/Product-Design-Image.png",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const services = [
     title: "Brand Identity",
     description: "Your brand deserves more than just a logo. We build bold, memorable identities that reflect your values and resonate with your target audience.",
     tags: ["Logo", "Branding", "Identity"],
-    image: "/Images and SVGs/Brand Identity Image.png",
+    image: "/assets/Brand-Identity-Image.webp",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const services = [
     title: "Web & Mobile Apps",
     description: "We design sleek, high-performing interfaces for websites, SaaS dashboards, and mobile apps ensuring your product looks great on every screen.",
     tags: ["Web", "Mobile", "SaaS"],
-    image: "/Images and SVGs/Web and Mobile Image.png",
+    image: "/assets/Web-and-Mobile-Image.png",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const services = [
     title: "Design Systems",
     description: "Build once, scale forever. We create organized, reusable design systems that power consistent UI across your entire SaaS or product ecosystem.",
     tags: ["Figma", "Components", "Tokens"],
-    image: "/Images and SVGs/Design System Service.png",
+    image: "/assets/Design-System-Service.png",
   },
   {
     id: 5,
@@ -41,7 +41,7 @@ const services = [
     title: "No-Code Development",
     description: "Need to launch fast? We build responsive, scalable web and SaaS apps using leading no-code tools, all without sacrificing design quality.",
     tags: ["Webflow", "Framer", "No-Code"],
-    image: "/Images and SVGs/No Code Development.png",
+    image: "/assets/No-Code-Development.png",
   },
 ];
 
